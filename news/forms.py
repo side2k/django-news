@@ -1,5 +1,5 @@
 ﻿from django import forms
-from django.conf import settings
+from news import settings
 from tinymce.widgets import AdminTinyMCE
 from news.models import News
 from django.utils.translation import ugettext_lazy as _
