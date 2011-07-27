@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-27 02:11+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural= n!=1;\n"
+
+#: admin.py:39
+#, python-format
+msgid "%(count)d newsitem was published"
+msgid_plural "%(count)d newsitems where published"
+msgstr[0] "%(count)d новость была опубликована"
+msgstr[1] "%(count)d новостей было опубликовано"
+
+#: admin.py:42
+msgid "Publish selected news"
+msgstr "Опубликовать выбранные новости"
+
+#: admin.py:49
+#, python-format
+msgid "%(count)d newsitem was unpublished"
+msgid_plural "%(count)d newsitems where unpublished"
+msgstr[0] "%(count)d новость снята с публикации"
+msgstr[1] "%(count)d новостей снято с публикации"
+
+#: admin.py:52
+msgid "Unpublish selected news"
+msgstr "Снять с публикации выбранные"
+
+#: forms.py:11
+msgid "Publication places"
+msgstr "Размещение"
+
+#: forms.py:11
+msgid "Place where the news will be published"
+msgstr "Места, куда новость будет опубликована"
+
+#: models.py:23
+msgid "Title"
+msgstr "Заголовок"
+
+#: models.py:24
+msgid "Slug"
+msgstr "Адрес"
+
+#: models.py:25
+msgid ""
+"A slug is a short name which uniquely identifies the news item for this day"
+msgstr ""
+"Адрес - это короткое имя латиницей, однозначно идентифицирующее новость "
+"среди других за сегодня"
+
+#: models.py:26
+msgid "Excerpt"
+msgstr "Краткий текст"
+
+#: models.py:27
+msgid "Content"
+msgstr "Текст"
+
+#: models.py:29
+msgid "Published"
+msgstr "Опубликовано"
+
+#: models.py:30
+msgid "Publication date"
+msgstr "Дата публикации"
+
+#: models.py:31
+msgid "Unpublication date"
+msgstr "Дата снятия с публикации"
+
+#: models.py:40
+msgid "Tags"
+msgstr "Теги"
+
+#: models.py:43 models.py:44
+msgid "News"
+msgstr "Новости"
+
+#: templates/cmsplugin_news/latest_news.html:2
+msgid "Latest news"
+msgstr "Свежие новости"
+
+#: templates/cmsplugin_news/latest_news.html:7
+msgid "No news yet"
+msgstr ""
+
+#~ msgid "Number of news items to show"
+#~ msgstr "Количество новостей:"
+
+#~ msgid "Limits the number of items that will be displayed"
+#~ msgstr "Ограничение количества показываемых новостей"
