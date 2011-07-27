@@ -1,2 +1,2 @@
-PUBLICATION_PLACES = ()
-from django.conf.settings import *
+from django.conf import settings
+PUBLICATION_PLACES = getattr(settings, "PUBLICATION_PLACES", ())
