@@ -6,8 +6,6 @@ from django.utils.translation import ugettext_lazy as _
 from tagging.models import Tag
 
 class NewsForm(forms.ModelForm):
-    class Meta:
-        model = News
     pub_places = forms.ChoiceField(label=_("Publication places"), choices=settings.PUBLICATION_PLACES, help_text=_("Place where the news will be published"))
     def _get_widget(self):
         return AdminTinyMCE()
@@ -31,4 +29,15 @@ class NewsForm(forms.ModelForm):
         return super(NewsForm, self).save(**kwargs)
         
     class Meta:
-        exclude = ["tags"]
+        model = News
+        fields = (
+            "title",        
+            "slug", 
+            "is_published",
+            "pub_places",
+            "excerpt",
+            "content",
+            "pub_date",
+            "unpub_date",
+            "tags",
+        )
