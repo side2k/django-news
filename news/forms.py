@@ -18,10 +18,11 @@ class NewsForm(forms.ModelForm):
         self.fields['content'].widget = widget
         #self.declared_fields["content"] = CharField(widget=widget, required=True)
         tag_ids = []
-        instance = kwargs["instance"]
-        for tag in instance.tags.order_by("id"):
-            tag_ids += ["%d" % tag.id]
-        self.initial["pub_places"] = "_".join(tag_ids)    
+        if "instance" in kwargs:
+            instance = kwargs["instance"]
+            for tag in instance.tags.order_by("id"):
+                tag_ids += ["%d" % tag.id]
+            self.initial["pub_places"] = "_".join(tag_ids)    
         
     def save(self, **kwargs):
         tag_ids = self.cleaned_data["pub_places"].split("_")
