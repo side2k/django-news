@@ -1,0 +1,15 @@
+{% extends 'admin/change_list.html' %}
+{% load i18n admin_list adminmedia filter_tags %}
+      {% block filters %}
+        {% if cl.has_filters %}
+          <div id="changelist-filter">
+            <h2>{% trans 'Filter' %}</h2>
+            {% for spec in cl.filter_specs %}
+                {% admin_list_filter cl spec %}
+                {% if spec.is_pub_place_filter %}
+                    {% pub_place_interval_filter cl spec %}
+                {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endblock %}

@@ -33,7 +33,7 @@ class PlaceFilterSpec(ChoicesFilterSpec):
         return _('%(field_name)s that starts with') % \
             {'field_name': self.field.verbose_name}
 
-FilterSpec.filter_specs.insert(0, (lambda f: getattr(f, 'alphabetic_filter', False), PlaceFilterSpec)) 
+FilterSpec.filter_specs.insert(0, (lambda f: getattr(f, 'pub_place_filter', False), PlaceFilterSpec)) 
 
 
 class NewsAdmin(admin.ModelAdmin):
@@ -43,7 +43,8 @@ class NewsAdmin(admin.ModelAdmin):
     date_hierarchy = 'pub_date'
     list_display = ('title', 'is_published', 'pub_place', 'pub_date', 'unpub_date')
     #list_editable = ('title', 'is_published')
-    list_filter = ('is_published', 'tags')
+    list_filter = ('is_published', 'tags', 'title')
+    pub_place_filter = {'title':News.objects.all()}
     search_fields = ['title', 'excerpt', 'content']
     prepopulated_fields = {'slug': ('title',)}
     form = NewsForm
