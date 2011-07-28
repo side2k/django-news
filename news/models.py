@@ -1,9 +1,9 @@
-import datetime
+﻿import datetime
 
 from django.db import models
 from django.db.models import Q
 from django.utils.translation import ugettext_lazy as _
-
+from django.conf import settings
 
 class PublishedNewsManager(models.Manager):
     """
@@ -44,6 +44,18 @@ class News(models.Model):
         verbose_name_plural = _('News')
         ordering = ('-pub_date', )
     
+    def pub_place(self):
+        result = _("Not specified")
+        tag_ids = []
+        for tag in self.tags.all():
+            tag_ids += ["%d" % tag.id]
+        tag_ids = "_".join(tag_ids)
+        for (place_code, place_name) in settings.PUBLICATION_PLACES:
+            if place_code == tag_ids:
+                result = place_name
+                break
+        return result
+        
     def __unicode__(self):
         return self.title
     @models.permalink
