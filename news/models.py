@@ -37,7 +37,7 @@ class News(models.Model):
     objects = models.Manager()
 	
 	#tags field
-    tags			= models.ManyToManyField("tagging.Tag", verbose_name=_("Tags"))
+    tags			= models.ManyToManyField("tagging.Tag", verbose_name=_("Tags"), blank=True)
 
     class Meta:
         verbose_name = _('News')
